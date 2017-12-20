@@ -8,7 +8,12 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
+  private mapit(res: Response) {
+    const body = res.json();
+    return body;
+  }
+
   getAlbum(id: number) {
-    return this._http.get(_albumUrl).map(response.json());
+    return this._http.get(this._albumUrl).map(this.mapit);
   }
 }

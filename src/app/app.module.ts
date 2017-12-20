@@ -17,8 +17,7 @@ import { ProductService } from './product.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    Product
+    HttpModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
