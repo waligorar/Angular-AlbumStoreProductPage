@@ -10,12 +10,7 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
-  private mapit(res: Response) {
-    const body = res.json();
-    return <Album>body;
-  }
-
   getAlbum(id: number): Observable<Album> {
-    return <Album>this._http.get(this._albumUrl).map(this.mapit);
+    return this._http.get(this._albumUrl).map(response => <Album>response.json());
   }
 }
